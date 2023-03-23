@@ -18,9 +18,13 @@ Abstract: *The practicality of 3D object pose estimation remains limited for man
   <img src=./media/result.gif width="50%"/>
 </p>
 
-\* We use the canonical pose of the 3D model to visualize this distribution, but not as input to our method.
+<font size="-1">\* We use the canonical pose of the 3D model to visualize this distribution, but not as input to our method.</font>
 
-\+ We visualize the predicted pose by rendering the object from this pose, but the 3D model is only used for visualization purposes, not as input to our method.
+<font size="-1">\+ We visualize the predicted pose by rendering the object from this pose, but the 3D model is only used for visualization purposes, not as input to our method.</font>
+
+
+
+
 
 ## <sub>We will make the code available soon. </sub>
 
