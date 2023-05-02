@@ -18,16 +18,14 @@ Abstract: *The practicality of 3D object pose estimation remains limited for man
   <img src=./media/result.gif width="50%"/>
 </p>
 
-<font size="-1">\* We use the canonical pose of the 3D model to visualize this distribution, but not as input to our method.</font>
 
-<font size="-1">\+ We visualize the predicted pose by rendering the object from this pose, but the 3D model is only used for visualization purposes, not as input to our method.</font>
+You can also put a star :star:, if the code is useful to you.
 
-
-
-
-
-## <sub>We will make the code available soon. </sub>
-
+If you like this project, check out related works from our group:
+- [Templates for 3D Object Pose Estimation Revisited: Generalization to New objects and Robustness to Occlusions (CVPR 2022)](https://github.com/nv-nguyen/template-pose) 
+- [PIZZA: A Powerful Image-only Zero-Shot Zero-CAD Approach to 6DoF Tracking
+(3DV 2022)](https://github.com/nv-nguyen/pizza)
+- [BOP visualization toolkit](https://github.com/nv-nguyen/bop_viz_kit)
 
 ## Citation
 
@@ -38,3 +36,31 @@ author={Nguyen, Van Nguyen and Groueix, Thibault and Hu, Yinlin and Salzmann, Ma
 journal={arXiv preprint arXiv:2303.13612},
 year={2023}}
 ```
+
+This repository is running with the Weight and Bias logger. Ensure that you update this [user's configuration](https://github.com/nv-nguyen/nope_released/blob/main/configs/user/default.yaml) before conducting any experiments. 
+## Installation :construction_worker:
+
+<details><summary>Click to expand</summary>
+
+### 1. Create conda environment
+```
+conda env create -f environment.yml
+conda activate nope
+```
+
+### 2. Datasets
+Please note that the total dataset size is huge (~2TB). Before running the following commands, ensure that you have sufficient memory to handle this volume of data.
+#### Option 1: Render dataset from scratch:
+```
+python -m src.scripts.generate_data --step select_cad --cad_dir $YOUR_CAD_DIR --save_dir $YOUR_SAVE_DIR
+python -m src.scripts.generate_data --step generate_poses_and_images --cad_dir $YOUR_CAD_DIR --save_dir $YOUR_SAVE_DIR
+```
+#### Option 2: Contact the first authors to get the pre-rendered dataset
+Rendering the dataset from scratch may take several days or even a week, depending on your compute power. To facilitate easy reproducibility and experimentation with this repository, you can contact the first author to manage transferring the dataset (over SSH for example).
+
+</details>
+
+
+## TODO
+- Gradio demo on real images of unseen objects of TLESS, unseen categories of ShapeNet
+- Refactoring src/dataloader, src/model and Reproduce and sharing wandb logger of training

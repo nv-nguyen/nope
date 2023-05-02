@@ -1,0 +1,10 @@
+defaults:
+  - user: default
+  - callback: base
+  - model: base
+  - machine: local
+  - data: shapeNet
+  - _self_
+save_dir: ${machine.root_dir}/results/${name_exp}
+name_exp: train_test_shapeNet
+use_pretrained: true

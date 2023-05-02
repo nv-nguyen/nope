@@ -1,11 +1,17 @@
 # Byte-compiled / optimized / DLL files
+.hydra/
+bop_viz_kit/
+tmp/
+outputs/
+slurm_logs/
+configs/user/nguyen.yaml
 __pycache__/
 *.py[cod]
 *$py.class
 
 # C extensions
 *.so
-
+.DS_Store
 # Distribution / packaging
 .Python
 build/

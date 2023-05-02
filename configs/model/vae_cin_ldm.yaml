@@ -1,0 +1,49 @@
+_target_: src.model.base.PoseConditional
+u_net:
+  _target_: src.model.u_net.ldm.adapt_openaimodel.UNetModelPose
+  image_size: 32
+  in_channels: 4
+  out_channels: 4
+  model_channels: 256
+  attention_resolutions:
+  #note: this isn\t actually the resolution but
+  # the downsampling factor, i.e. this corresnponds to
+  # attention on spatial resolution 8,16,32, as the
+  # spatial reolution of the latents is 32 for f8
+  - 4
+  - 2
+  - 1
+  num_res_blocks: 2
+  channel_mult:
+  - 1
+  - 2
+  - 4
+  num_head_channels: 32
+  use_spatial_transformer: true
+  transformer_depth: 1
+  context_dim: 512
+
+  # pose parts
+  injecting_condition_twice: false
+  rot_representation_dim: 6
+  pose_mlp_name: "single_layer"
+  encoder:
+    _target_: src.model.encoder.AutoencoderKL.VAE_StableDiffusion
+    pretrained_path: ${machine.root_dir}/pretrained/stable-diffusion-v1-5_vae.pth
+    latent_dim: 4
+    name: VAE
+    using_KL: false
+  
+  pretrained_path: ${machine.root_dir}/pretrained/ldm/model.ckpt
+
+save_dir: ${save_dir}
+optim_config:
+  loss_type: l1
+  lr: 5e-5
+  weight_decay: 0.0005
+  warm_up_steps: 500
+  use_inv_deltaR: true
+testing_config:
+  similarity_metric: l2 # cosine
+
+checkpoint_path:
