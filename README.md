@@ -37,7 +37,7 @@ journal={arXiv preprint arXiv:2303.13612},
 year={2023}}
 ```
 
-This repository is running with the Weight and Bias logger. Ensure that you update this [user's configuration](https://github.com/nv-nguyen/nope_released/blob/main/configs/user/default.yaml) before conducting any experiments. 
+This repository is running with the Weight and Bias logger. Ensure that you update this [user's configuration](https://github.com/nv-nguyen/nope/blob/main/configs/user/default.yaml) before conducting any experiments. 
 ## Installation :construction_worker:
 
 <details><summary>Click to expand</summary>
