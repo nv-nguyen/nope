@@ -85,6 +85,8 @@ def vsd_obj(
     # gt poses
     if use_gt_translation:
         pred_poses[:, :3, 3] = gt_poses[:, :3, 3]
+    else:
+        raise NotImplementedError
     gt_depths = renderer(gt_poses)
     pred_depths = renderer(pred_poses)
     vsd_error = np.zeros(len(gt_depths))
