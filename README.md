@@ -7,7 +7,7 @@ NOPE: Novel Object Pose Estimation from a Single Image
 <h3>
 <a href="https://nv-nguyen.github.io/" target="_blank"><nobr>Van Nguyen Nguyen</nobr></a> &emsp;
 <a href="http://imagine.enpc.fr/~groueixt/" target="_blank"><nobr>Thibault Groueix</nobr></a> &emsp;
-<a href="https://yinlinhu.github.io/" target="_blank"><nobr>Yinlin Hu</nobr></a> &emsp;
+<a href="https://yinlinhu.github.io/" target="_blank"><nobr>Yinlin Hu</nobr></a> &emsp; <br>
 <a href="https://people.epfl.ch/mathieu.salzmann" target="_blank"><nobr>Mathieu Salzmann</nobr></a> &emsp;
 <a href="https://vincentlepetit.github.io/" target="_blank"><nobr>Vincent Lepetit</nobr></a>
 
@@ -51,6 +51,7 @@ Abstract: *The practicality of 3D object pose estimation remains limited for man
 ## Installation :construction_worker:
 
 <details><summary>Click to expand</summary>
+
 This repository is running with the Weight and Bias logger. Ensure that you update this [user's configuration](https://github.com/nv-nguyen/nope/blob/main/configs/user/default.yaml) before conducting any experiments. 
 
 ### 1. Create conda environment
@@ -73,6 +74,25 @@ Rendering the dataset from scratch may take several days or even a week, dependi
 
 </details>
 
+##  Inference
+
+<details><summary>Click to expand</summary>
+
+```
+python test_shapeNet.py name_exp=test_shapeNet
+```
+
+</details>
+
+##  Launch a training :rocket:
+
+<details><summary>Click to expand</summary>
+
+```
+python train.py name_exp=train
+```
+
+</details>
 
 ## TODO
 - Gradio demo on real images of unseen objects of TLESS, unseen categories of ShapeNet
