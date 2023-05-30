@@ -1,0 +1,16 @@
+dataset_name: RU-APC
+root_dir: ${machine.root_dir}/datasets/nope/ruapc
+source: 
+  url: https://bop.felk.cvut.cz/media/data/bop_datasets/ruapc_train.zip
+  cad_url: https://bop.felk.cvut.cz/media/data/bop_datasets/ruapc_models.zip
+  http: True
+  unzip_mode: unzip
+  processing:
+
+dataloader:
+  _target_: src.dataloader.bop.BOPDataset
+  root_dir: ${machine.root_dir}/datasets/nope/ruapc
+  obj_ids: 
+  reset_metaData: True
+  img_size: 256
+  cropping_with_bbox: True

@@ -1,0 +1,26 @@
+_target_: src.model.model.PoseConditional
+u_net:
+  _target_: src.model.u_net.denoising_diffusion_pytorch.u_net.UNet
+  u_net_dim: 192
+  rot_representation_dim: 6
+  pose_mlp_name: "single_layer"
+  encoder:
+    _target_: src.model.encoder.template.FeatureExtractor
+    pretrained_path: ${machine.root_dir}/pretrained/resnet50_template_pose.pth
+    descriptor_size: 8
+    threshold: 0.2
+    normalize: false
+    
+  pretrained_path: 
+
+save_dir: ${save_dir}
+optim_config:
+  loss_type: l1
+  lr: 5e-5
+  weight_decay: 0.0005
+  warm_up_steps: 500
+  use_inv_deltaR: true
+testing_config:
+  similarity_metric: l2 # cosine
+
+checkpoint_path:

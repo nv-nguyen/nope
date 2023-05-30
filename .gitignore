@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+configs/user/nguyen.yaml
 .hydra/
 bop_viz_kit/
 tmp/

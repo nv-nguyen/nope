@@ -1,0 +1,17 @@
+dataset_name: LINEMOD
+root_dir: ${machine.root_dir}/datasets/nope/lm
+obj_names: "ape, benchvise, cam, can, cat, driller, duck, eggbox, glue, holepuncher, iron, lamp, phone"
+source:
+  url: https://files.icg.tugraz.at/f/472f5d1108/?dl=1
+  cad_url: https://bop.felk.cvut.cz/media/data/bop_datasets/lm_models.zip
+  http: False
+  unzip_mode: unzip
+  processing: 
+
+dataloader:
+  _target_: src.dataloader.bop.BOPDataset
+  root_dir: ${machine.root_dir}/datasets/nope/lm
+  obj_ids:
+  reset_metaData: True
+  img_size: 256
+  cropping_with_bbox: True

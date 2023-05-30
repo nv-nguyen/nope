@@ -1,0 +1,7 @@
+_target_: src.dataloader.objaverse.Objaverse
+
+# default, do not change
+root_dir: ${machine.root_dir}/datasets/nope/Objaverse/ 
+split: 
+rot_representation: rotation6d
+img_size: 256

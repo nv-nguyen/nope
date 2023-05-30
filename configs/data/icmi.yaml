@@ -1,0 +1,16 @@
+dataset_name: IC-MI
+root_dir: ${machine.root_dir}/datasets/nope/icmi
+source: 
+  url: https://bop.felk.cvut.cz/media/data/bop_datasets/icmi_train.zip
+  cad_url: https://bop.felk.cvut.cz/media/data/bop_datasets/icmi_models.zip
+  http: True
+  unzip_mode: unzip
+  processing:
+
+dataloader:
+  _target_: src.dataloader.bop.BOPDataset
+  root_dir: ${machine.root_dir}/datasets/nope/icmi
+  obj_ids:
+  reset_metaData: True
+  img_size: 256
+  cropping_with_bbox: True

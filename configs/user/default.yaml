@@ -1,4 +1,4 @@
-wandb_api_key: 
+wandb_api_key: YOUR_WANDB_KEY
 wandb_project_name: nope_project
-local_root_dir: 
-slurm_root_dir: # if not available, put None
+local_root_dir: YOUR_ROOT_DIR
+slurm_root_dir: # nothing if you don't use slurm

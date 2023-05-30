@@ -1,0 +1,20 @@
+defaults:
+  - user: default
+  - callback: base
+  - model: vae_base
+  - machine: local
+  - data: all
+  - _self_
+
+train_data_name:
+  - bop_texture
+  - shapeNet
+  - objaverse
+  - tless
+
+test_data_name:
+  - shapeNet
+  
+use_pretrained: true
+save_dir: ${machine.root_dir}/results/${name_exp}
+name_exp: train_all

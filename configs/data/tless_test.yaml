@@ -1,0 +1,16 @@
+dataset_name: TLESS_test
+root_dir: ${machine.root_dir}/datasets/nope/tless/test
+source: 
+  url: https://bop.felk.cvut.cz/media/data/bop_datasets/tless_test_primesense_all.zip
+  cad_url: https://bop.felk.cvut.cz/media/data/bop_datasets/tless_models.zip
+  http: True
+  unzip_mode: unzip
+  processing:
+
+dataloader:
+  _target_: src.dataloader.bop.BOPDataset
+  root_dir: ${machine.root_dir}/datasets/nope/tless/test
+  obj_ids: "19,20,21,22,23,24,25,26,27,28,29,30"
+  reset_metaData: True
+  img_size: 256
+  cropping_with_bbox: True

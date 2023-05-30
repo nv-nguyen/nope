@@ -1,0 +1,10 @@
+dataset_name: occlusionLINEMOD
+root_dir: ${machine.root_dir}/datasets/nope/o-lm
+obj_names: "ape, can, cat, driller, duck, eggbox, glue, holepuncher"
+source:
+  url: https://cloudstore.zih.tu-dresden.de/index.php/s/a65ec05fedd4890ae8ced82dfcf92ad8/download
+  cad_url: https://bop.felk.cvut.cz/media/data/bop_datasets/lm_models.zip
+  opencv_pose_url: https://drive.google.com/file/d/1NqptkWhSGKsY16Y-jzDxVHIznxQhOud_/view?usp=sharing
+  http: False
+  unzip_mode: unzip
+  processing: rename
